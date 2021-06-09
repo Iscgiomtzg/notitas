@@ -1,0 +1,13 @@
+.page-not-found{
+  text-align: center;
+  margin: 10%;
+  font-size: xx-large;
+  padding: 5% 1%;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  color: white;
+}
+
+.page-not-found:hover{
+  background-color: rgba($color: #5e5e5e, $alpha: 0.8);
+  color: #000;
+}

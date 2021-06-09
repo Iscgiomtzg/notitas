@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title class="title">
+    <span style="vertical-align: sub">{{ dataBoard.name }}</span>
+  </mat-card-title>
+  <div class="row" style="margin-top: 3%;">
+    <mat-card-subtitle style="display: inline;" *ngFor="let list of dataList">
+      <button (click)="getCardsInList(list.id)" mat-button>
+        {{list.name ? list.name : 'No hay listas que mostrar'}}
+      </button>
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      <button mat-button style="background-color:rgba(0, 0, 0, 0.3);" (click)="openDialog('list')">
+        <mat-icon>add</mat-icon>
+        Agregar Lista
+      </button>
+    </mat-card-subtitle>
+  </div>
+  <div class="card-content">
+    <mat-card-content *ngFor="let card of cards">
+      <p class="cardName">{{card.name}}</p>
+      <p class="cardDesc">{{card.desc ? card.desc : 'No hay descripcion'}}</p>
+      <button class="btn" mat-raised-button (click)="openDialog('card', card.id, card.name, card.desc)">Editar Card</button>
+      <button class="btn" mat-raised-button color="warn" (click)="deleteCard(card.id)">Eliminar Card</button>
+    </mat-card-content>
+  </div>
+  <mat-card-actions>
+    <button mat-raised-button (click)="openDialog('card')" [disabled]="disabled">Crear card</button>
+  </mat-card-actions>
+</mat-card>

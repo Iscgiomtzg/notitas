@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const TRELLO_API = {
+  key: '1130f2cee56e40d34fb8aaee94d6fbdf',
+  token: 'fd6ce22ea296660b7da8e0a6fc1e36d396f19e0d8b1b6871eefbd34ef0cc08c4'
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

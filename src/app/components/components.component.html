@@ -1,0 +1,26 @@
+<mat-drawer-container autosize>
+  <!-- Aqui va el drawer -->
+  <mat-drawer #drawer mode="side" style="width: 200px; text-align: center;">
+    <span *ngFor="let board of boards" style="margin:1%; display: flex; flex-direction: column;">
+      <button mat-button [routerLink]="['board/', board.id]" (click)="refresh()">{{board.name | uppercase}}</button>
+    </span>
+    <button mat-button (click)="addBoard()">
+      <mat-icon>add</mat-icon>
+      Agregar Board
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-button [routerLink]="['reactive-forms']">Reactive Forms</button>
+    <button mat-button [routerLink]="['template-driven-forms']">Template Driven Forms</button>
+
+  </mat-drawer>
+  <!-- Aqui va el header -->
+  <mat-toolbar style="display: flex; justify-content: space-between; background-color: #E0F0F6;">
+      <span>Notitas</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
+<p style="position: fixed; bottom: 0; right: 0; margin: 10px; padding: 10px;">Hecho por Giovanni Mtz</p>

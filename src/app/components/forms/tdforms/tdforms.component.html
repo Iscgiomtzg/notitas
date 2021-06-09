@@ -1,0 +1,18 @@
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" style="display: flex; flex-direction: column; align-items: center;">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" ngModel>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" ngModel>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" ngModel>
+    <label for="isMarried">Married</label>
+    <input type="checkbox" id="isMarried" name="isMarried" ngModel>
+    <label for="country">country </label>
+    <select name="country" id="country" ngModel>
+      <option selected="" value=""></option>
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+        {{c.name}}
+      </option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
